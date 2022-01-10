@@ -14,16 +14,17 @@ const ProtectedRoute = ({ children, ...rest }) => {
 			{...rest}
 			render={(props) => {
 				// console.log("Props from protectedRoute render: ", props);
-				return isLogin ? (
-					children
-				) : (
-					<Redirect
-						to={{
-							pathname: "/login",
-							state: { from: props.location },
-						}}
-					/>
-				);
+				// return isLogin ? (
+				// 	children
+				// ) : (
+				// 	<Redirect
+				// 		to={{
+				// 			pathname: "/login",
+				// 			state: { from: props.location },
+				// 		}}
+				// 	/>
+				// );
+				return children;
 			}}
 		/>
 	);

@@ -36,24 +36,23 @@ function App() {
 
 	return (
 		<AppContext.Provider value={{ handleDrawerOpen, handleLoading }}>
-			{/* <Router> */}
-			{loading && (
+			{/* {loading && (
 				<Container
 					style={{
 						height: '99vh',
 						display: 'flex',
 						justifyContent: 'center',
 						alignItems: 'center',
-						// position: 'absolute',
-						// top: '0px',
-						// left: '0px',
+						position: 'absolute',
+						top: '0px',
+						left: '0px',
 						zIndex: 1000,
 						backgroundColor: 'white',
 						width: '100%',
 					}}>
 					<CircularProgress color='secondary' size={100} />
 				</Container>
-			)}
+			)} */}
 			<AuthContextProvider>
 				<CssBaseline />
 

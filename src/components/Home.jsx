@@ -204,14 +204,18 @@ export default function Home(props) {
 
 				let reading = await bpm.readValue();
 				let readValue = reading.getUint16();
+				console.log('Reading bp: ', readValue);
 				let bp = {
 					sis: readValue & 0xff,
 					dia: (readValue >> 8) & 0xff,
 				};
-				setVitals((prevState) => ({
-					...prevState,
-					bp: `Diastole: ${bp.dia} Sistole: ${bp.sis}`,
-				}));
+				setVitals((prevState) => {
+					console.log('PRev state: ', prevState);
+					return {
+						...prevState,
+						bp: `Diastole: ${bp.dia} Sistole: ${bp.sis}`,
+					};
+				});
 			})();
 		} else {
 			alert('No bluetooth Devices found...Please connect to one');
